@@ -1,8 +1,16 @@
 class MaxIntSet
   def initialize(max)
+    @store = Array.new(max) { Array.new([]) }
+    @max = max
+  end
+
+  def []=(num)
+    @store[num % max]
   end
 
   def insert(num)
+    raise 'Out of bounds' if num > @max || num < 0
+    
   end
 
   def remove(num)

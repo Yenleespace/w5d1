@@ -11,7 +11,7 @@ describe MaxIntSet do
 
     it "should return true if the number has been inserted" do
       set.insert(1)
-      expect(set).to include(1)
+      exp ect(set).to include(1)
     end
   end
 
