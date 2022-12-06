@@ -1,6 +1,6 @@
 class MaxIntSet
   def initialize(max)
-    @store = Array.new(max) { Array.new([]) }
+    @store = Array.new(max) { Array.new() }
     @max = max
   end
 
@@ -10,13 +10,17 @@ class MaxIntSet
 
   def insert(num)
     raise 'Out of bounds' if num > @max || num < 0
-    
+    @store[num] = true
   end
 
   def remove(num)
+    @store[num] = false
   end
 
   def include?(num)
+    # return true if @store[num] != false
+    return true if !(num > @store.length - 1)
+    @store[num]
   end
 
   private
